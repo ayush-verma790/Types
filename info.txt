@@ -1,0 +1,163 @@
+Beginner (1–10) – Tuples, Arrays, Basic Types
+
+First Element of Tuple
+
+Problem: Get the first element of a tuple.
+
+Hint: Use T extends [infer F, ...infer _].
+
+Example: First<[1, 2, 3]> → 1
+
+Last Element of Tuple
+
+Problem: Get the last element.
+
+Hint: Use variadic tuples [...infer Rest, infer L].
+
+Example: Last<[1, 2, 3]> → 3
+
+Length of Tuple
+
+Problem: Calculate tuple length.
+
+Hint: Use T['length'].
+
+Example: Length<[1,2,3]> → 3
+
+Pop Tuple
+
+Problem: Remove last element of tuple.
+
+Hint: [...infer Rest, infer _].
+
+Example: Pop<[1,2,3]> → [1,2]
+
+Shift Tuple
+
+Problem: Remove first element of tuple.
+
+Hint: [infer _, ...infer Rest].
+
+Example: Shift<[1,2,3]> → [2,3]
+
+Concat Tuples
+
+Problem: Merge two tuples.
+
+Hint: [...A, ...B].
+
+Example: Concat<[1,2],[3,4]> → [1,2,3,4]
+
+Includes Tuple
+
+Problem: Check if a tuple contains a type.
+
+Hint: Use recursion [infer F, ...infer R] + conditional types.
+
+Example: Includes<[1,2,3],2> → true
+
+IndexOf Tuple
+
+Problem: Return the index of an element in a tuple.
+
+Hint: Use accumulator tuple to count recursion steps.
+
+Example: IndexOf<[1,2,3],2> → 1
+
+Reverse Tuple
+
+Problem: Reverse a tuple.
+
+Hint: Recursion + accumulator [F, ...R].
+
+Example: Reverse<[1,2,3]> → [3,2,1]
+
+Concat Strings
+
+Problem: Merge two string literal types.
+
+Hint: Template literal types ${A}${B}.
+
+Example: Concat<'Hello','World'> → 'HelloWorld'
+
+Intermediate (11–20) – Strings, Template Literals, Recursion
+
+Trim Left Spaces
+
+Problem: Remove spaces from the start of a string.
+
+Hint: ${' '}${infer Rest} recursion.
+
+Example: TrimLeft<' hi'> → 'hi'
+
+Trim Right Spaces
+
+Problem: Remove spaces from the end.
+
+Hint: ${infer Rest} ${''} recursion.
+
+Example: TrimRight<'hi '> → 'hi'
+
+Trim Both Sides
+
+Problem: Remove spaces from both ends.
+
+Hint: Combine TrimLeft + TrimRight.
+
+Example: Trim<' hi '> → 'hi'
+
+StartsWith
+
+Problem: Check if string starts with a prefix.
+
+Hint: ${Prefix}${infer _Rest} conditional type.
+
+Example: StartsWith<'Hello','He'> → true
+
+EndsWith
+
+Problem: Check if string ends with suffix.
+
+Hint: ${infer _Rest}${Suffix}.
+
+Example: EndsWith<'Hello','lo'> → true
+
+Replace
+
+Problem: Replace first occurrence of substring.
+
+Hint: ${infer Start}${From}${infer End}.
+
+Example: Replace<'Hello World','World','TS'> → 'Hello TS'
+
+Capitalize
+
+Problem: Capitalize first letter.
+
+Hint: Use built-in Capitalize<S>.
+
+Example: Capitalize<'hello'> → 'Hello'
+
+Uncapitalize
+
+Problem: Lowercase first letter.
+
+Hint: Use built-in Uncapitalize<S>.
+
+Example: Uncapitalize<'Hello'> → 'hello'
+
+Concat Words
+
+Problem: Join string tuple with spaces.
+
+Hint: Recursion + template literals.
+
+Example: Join<['Hello','TS']> → 'Hello TS'
+
+Replace All
+
+Problem: Replace all occurrences of substring.
+
+Hint: Recursion + template literals.
+
+Example: ReplaceAll<'foo foo','foo','bar'> → 'bar bar'
